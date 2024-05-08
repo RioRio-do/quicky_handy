@@ -2,16 +2,18 @@ import flet as ft
 
 def ctax(page):
     def calc(e):
+        # 一度変更が反映されるとif文の中身が実行されない不具合。明日修正する
+        # 多分TextFieldの前にボタンかなんかをつければいける。
         if extax.value == "" and intax.value != "" and rate.value != "":
-            extax.value = round(intax.value / (1 + (rate.value) * 0.01) ,3)
+            extax.value = round(float(intax.value) / (1 + (float(rate.value)) * 0.01) ,3)
             ft.Page.update(page)
 
         if extax.value != "" and intax.value == "" and rate.value != "":
-            intax.value = round(extax.value * (1 + (rate.value) * 0.01) ,3)
+            intax.value = round(float(extax.value) * (1 + (float(rate.value)) * 0.01) ,3)
             ft.Page.update(page)
 
         if extax.value != "" and intax.value != "" and rate.value == "":
-            rate.value = round(((intax.value / extax.value) * 100) - 100 ,3)
+            rate.value = round(((float(intax.value) / float(extax.value)) * 100) - 100 ,3)
             ft.Page.update(page)
             
         
@@ -35,7 +37,6 @@ def ctax(page):
                 ft.Container(
                     ft.Column(
                         [
-                            ft.Container(ft.Text("変換前",size=20,text_align=ft.TextAlign.CENTER),),
                             extax,
                             intax,
                             rate,
