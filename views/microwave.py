@@ -19,7 +19,6 @@ def microwave(page):
             
             title=ft.Text("電子レンジ出力変換器"),
             center_title=True,
-            bgcolor="#e2f38e",
             leading=ft.IconButton(icon=ft.icons.HOME,on_click=lambda _: ft.Page.go(page,"/home"),),
         ),
 
