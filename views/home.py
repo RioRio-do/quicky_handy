@@ -10,6 +10,12 @@ def home(page):
                     padding=ft.padding.all(15),
                     on_click=lambda _: ft.Page.go(page,"/microwave"),
                 ),
+                ft.IconButton(
+                    icon=ft.icons.ATTACH_MONEY,
+                    icon_size=50,tooltip="税込税抜変換",
+                    padding=ft.padding.all(15),
+                    on_click=lambda _: ft.Page.go(page,"/ctax"),
+                ),
             ],
             alignment=ft.MainAxisAlignment.CENTER,
         ),
