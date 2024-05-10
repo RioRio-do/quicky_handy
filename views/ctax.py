@@ -2,8 +2,6 @@ import flet as ft
 
 def ctax(page):
     def calc(e):
-        # 一度変更が反映されるとif文の中身が実行されない不具合。明日修正する
-        # 多分TextFieldの前にボタンかなんかをつければいける。
         if cg.value == "ex":
             extax.value = round(float(intax.value) / (1 + (float(rate.value)) * 0.01) ,3)
             ft.Page.update(page)
