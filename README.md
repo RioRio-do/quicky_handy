@@ -44,7 +44,7 @@ def main(page: ft.Page):
         elif troute.match("/microwave"):
             page.views.append(microwave.microwave(page))
         elif troute.mach("/photo"):  #ここにelif文を追加
-            page.views.append(home.home(page))
+            page.views.append(photo.photo(page))
         page.update()
 
     page.on_route_change = route_change    

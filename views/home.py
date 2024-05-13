@@ -16,6 +16,12 @@ def home(page):
                     padding=ft.padding.all(15),
                     on_click=lambda _: ft.Page.go(page,"/ctax"),
                 ),
+                ft.IconButton(
+                    icon=ft.icons.STADIUM_SHARP,
+                    icon_size=50,tooltip="東京ドーム変換",
+                    padding=ft.padding.all(15),
+                    on_click=lambda _: ft.Page.go(page,"/tokyodome"),
+                ),
             ],
             alignment=ft.MainAxisAlignment.CENTER,
         ),

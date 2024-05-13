@@ -2,6 +2,7 @@ import flet as ft
 from views import home
 from views import microwave
 from views import ctax
+from views import tokyodome
 
 
 def main(page: ft.Page):
@@ -18,6 +19,8 @@ def main(page: ft.Page):
             page.views.append(microwave.microwave(page))
         elif troute.match("/ctax"):
             page.views.append(ctax.ctax(page))
+        elif troute.match("/tokyodome"):
+            page.views.append(tokyodome.tokyodome(page))
         page.update()
 
     page.on_route_change = route_change    

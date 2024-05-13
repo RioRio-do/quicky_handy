@@ -55,7 +55,7 @@ def ctax(page):
     return ft.View("/ctax",[
         ft.AppBar(
             
-            title=ft.Text("税込税抜変換器"),
+            title=ft.Text("税込税抜変換機"),
             center_title=True,
             leading=ft.IconButton(icon=ft.icons.HOME,on_click=lambda _: ft.Page.go(page,"/home"),),
         ),

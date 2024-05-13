@@ -17,7 +17,7 @@ def microwave(page):
     return ft.View("/microwave",[
         ft.AppBar(
             
-            title=ft.Text("電子レンジ出力変換器"),
+            title=ft.Text("電子レンジ出力変換機"),
             center_title=True,
             leading=ft.IconButton(icon=ft.icons.HOME,on_click=lambda _: ft.Page.go(page,"/home"),),
         ),
