@@ -22,6 +22,18 @@ def home(page):
                     padding=ft.padding.all(15),
                     on_click=lambda _: ft.Page.go(page,"/tokyodome"),
                 ),
+                ft.IconButton(
+                    icon=ft.icons.ASSIGNMENT_SHARP,
+                    icon_size=50,tooltip="BMI計算",
+                    padding=ft.padding.all(15),
+                    on_click=lambda _: ft.Page.go(page,"/bmi"),
+                ),
+                ft.IconButton(
+                    icon=ft.icons.STAR,
+                    icon_size=50,tooltip="星座計算",
+                    padding=ft.padding.all(15),
+                    on_click=lambda _: ft.Page.go(page,"/sign"),
+                ),
             ],
             alignment=ft.MainAxisAlignment.CENTER,
         ),
