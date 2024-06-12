@@ -12,6 +12,11 @@ def main(page: ft.Page):
     page.title = "quicky_handy"
     page.vertical_alignment = ft.MainAxisAlignment.CENTER\
         
+    page.window_full_screen = False
+    page.fonts = {
+        "r" : "/Roboto-Medium.ttf"
+    }
+        
     def route_change(handler):
         troute = ft.TemplateRoute(handler.route)
         page.views.clear()
@@ -27,6 +32,8 @@ def main(page: ft.Page):
             page.views.append(bmi.bmi(page))
         elif troute.match("/sign"):
             page.views.append(sign.sign(page))   
+        elif troute.match("/myard"):
+            page.views.append(myard.myard(page))   
         page.update()
 
     page.on_route_change = route_change    
@@ -35,4 +42,4 @@ def main(page: ft.Page):
 
 
 if __name__ == "__main__":
-    ft.app(target=main)
+    ft.app(target=main,assets_dir="assets")
