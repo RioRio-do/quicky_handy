@@ -55,7 +55,7 @@ def ctax(page):
     return ft.View("/ctax",[
         ft.AppBar(
             
-            title=ft.Text("税込税抜変換器"),
+            title=ft.Text("税込税抜計算"),
             center_title=True,
             leading=ft.IconButton(icon=ft.icons.HOME,on_click=lambda _: ft.Page.go(page,"/home"),),
         ),
@@ -72,5 +72,14 @@ def ctax(page):
                 ),
             ],
             alignment=ft.MainAxisAlignment.CENTER,
+        ),
+        ft.Column([
+            ft.Container(disabled=True,height=60),
+            ft.Text("変換先にしたい数値にチェックを入れた状態で、\n他の2つを埋めると自動的に計算されます。",color="#43474e",size=24,),
+            ft.Text("このアプリの計算の正確性は保証しかねます。ご注意ください。",color="#43474e",size=24),
+            ],
+        alignment=ft.MainAxisAlignment.CENTER,
+        horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+        width=10000000,
         ),
     ])
