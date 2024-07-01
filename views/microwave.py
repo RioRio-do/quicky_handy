@@ -2,11 +2,11 @@ import flet as ft
 
 def microwave(page):
     def calcS(e):
-        textS2.value = round(int(textW1.value) / int(textW2.value) * int(textS1.value))
+        textS2.value = round(int(textW1.value) / int(textW2.value) * int(textS1.value),5)
         ft.Page.update(page)
     
     def calcW(e):
-        textW2.value = round(int(textW1.value) / int(textS2.value) * int(textS1.value))
+        textW2.value = round(int(textW1.value) / int(textS2.value) * int(textS1.value),5)
         ft.Page.update(page)
         
     textW1 = ft.TextField(keyboard_type=ft.KeyboardType.NUMBER,label="ワット数[W]",hint_text="ここにレンジのワット数を入力...",icon=ft.icons.ELECTRIC_BOLT,)
@@ -17,9 +17,8 @@ def microwave(page):
     return ft.View("/microwave",[
         ft.AppBar(
             
-            title=ft.Text("電子レンジ出力変換器"),
+            title=ft.Text("電子レンジ計算機"),
             center_title=True,
-            bgcolor="#e2f38e",
             leading=ft.IconButton(icon=ft.icons.HOME,on_click=lambda _: ft.Page.go(page,"/home"),),
         ),
 
@@ -62,5 +61,15 @@ def microwave(page):
                 ),
             ],
             alignment=ft.MainAxisAlignment.CENTER,
+        ),
+        
+        ft.Column([
+            ft.Container(disabled=True,height=60),
+            ft.Text("変換前に記載されている元の時間とワット数を入れた状態で、\n変換後のどちらかに値を入力すると自動的に計算されます。",color="#43474e",size=24,),
+            ft.Text("このアプリの計算の正確性は保証しかねます。ご注意ください。",color="#43474e",size=24),
+            ],
+        alignment=ft.MainAxisAlignment.CENTER,
+        horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+        width=10000000,
         ),
     ])
