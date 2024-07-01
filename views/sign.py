@@ -10,32 +10,39 @@ def sign(page):
             page.update()
 
     def get_zodiac_sign(month, day):
-        if (month == 1 and day >= 20) or (month == 2 and day <= 18):
-            return "みずがめ座"
-        elif (month == 2 and day >= 19) or (month == 3 and day <= 20):
-            return "うお座"
-        elif (month == 3 and day >= 21) or (month == 4 and day <= 19):
-            return "おひつじ座"
-        elif (month == 4 and day >= 20) or (month == 5 and day <= 20):
-            return "おうし座"
-        elif (month == 5 and day >= 21) or (month == 6 and day <= 20):
-            return "ふたご座"
-        elif (month == 6 and day >= 21) or (month == 7 and day <= 22):
-            return "かに座"
-        elif (month == 7 and day >= 23) or (month == 8 and day <= 22):
-            return "しし座"
-        elif (month == 8 and day >= 23) or (month == 9 and day <= 22):
-            return "おとめ座"
-        elif (month == 9 and day >= 23) or (month == 10 and day <= 22):
-            return "てんびん座"
-        elif (month == 10 and day >= 23) or (month == 11 and day <= 21):
-            return "さそり座"
-        elif (month == 11 and day >= 22) or (month == 12 and day <= 21):
-            return "いて座"
-        elif (month == 12 and day >= 22) or (month == 1 and day <= 19):
-            return "やぎ座"
-        else:
+        if ((month == 2) or (month == 4) or (month == 6) or (month == 9) or (month == 11)) and (day > 30):
             return "不明な星座"
+        if (month == 2) and (day == 30):
+            return "不明な星座"
+        if (month < 1) or (month > 12) or (day < 1) or (day > 31):
+            return "不明な星座"
+        else:
+            if (month == 1 and day >= 20) or (month == 2 and day <= 18):
+                return "みずがめ座"
+            elif (month == 2 and day >= 19) or (month == 3 and day <= 20):
+                return "うお座"
+            elif (month == 3 and day >= 21) or (month == 4 and day <= 19):
+                return "おひつじ座"
+            elif (month == 4 and day >= 20) or (month == 5 and day <= 20):
+                return "おうし座"
+            elif (month == 5 and day >= 21) or (month == 6 and day <= 20):
+                return "ふたご座"
+            elif (month == 6 and day >= 21) or (month == 7 and day <= 22):
+                return "かに座"
+            elif (month == 7 and day >= 23) or (month == 8 and day <= 22):
+                return "しし座"
+            elif (month == 8 and day >= 23) or (month == 9 and day <= 22):
+                return "おとめ座"
+            elif (month == 9 and day >= 23) or (month == 10 and day <= 22):
+                return "てんびん座"
+            elif (month == 10 and day >= 23) or (month == 11 and day <= 21):
+                return "さそり座"
+            elif (month == 11 and day >= 22) or (month == 12 and day <= 21):
+                return "いて座"
+            elif (month == 12 and day >= 22) or (month == 1 and day <= 19):
+                return "やぎ座"
+            else:
+                return "不明な星座"
 
     textW1 = ft.TextField(keyboard_type=ft.KeyboardType.NUMBER, label="月[半角数字]", hint_text="ここに誕生日の月を入力...", icon=ft.icons.STAR, on_change=judge)
     textS1 = ft.TextField(keyboard_type=ft.KeyboardType.NUMBER, label="日[半角数字]", hint_text="ここに誕生日の日を入力...", icon=ft.icons.STAR, on_change=judge)
